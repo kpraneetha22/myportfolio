@@ -3,94 +3,166 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kramadhati Naga Praneetha | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kramadhati Naga Praneetha | Frontend Developer & CS Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #f9f9f9;
-      color: #333;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #1e293b;
       line-height: 1.6;
       padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
       text-align: center;
       margin-bottom: 2rem;
-      animation: fadeIn 2s ease;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      color: #0f172a;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.2rem;
     }
 
     header p {
-      font-weight: 300;
+      font-size: 1.25rem;
+      color: #3b82f6;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background-color: #ffffffdd;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      font-weight: 600;
+      font-size: 1rem;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    nav:hover {
+      background-color: #f8f9fa;
+    }
+
+    nav a {
+      color: #0f172a;
+      text-decoration: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      user-select: none;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #3b82f6;
+      color: white;
+      outline: none;
+      cursor: pointer;
     }
 
     section {
-      margin-bottom: 2rem;
-      animation: slideUp 1.5s ease;
+      margin-bottom: 2.5rem;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     }
 
     h2 {
       font-size: 1.8rem;
-      color: #222;
-      margin-bottom: 0.5rem;
-    }
-
-    .bio, .skills, .project, .contact {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      color: #0f172a;
+      margin-bottom: 1rem;
+      border-left: 5px solid #3b82f6;
+      padding-left: 0.8rem;
     }
 
     ul {
+      padding-left: 1.4rem;
       list-style: none;
-      padding-left: 1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.2rem;
+      position: relative;
+      font-weight: 500;
+      color: #334155;
     }
 
     ul li::before {
-      content: "\2022";
-      color: #007acc;
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-      margin-left: -1em;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      transform: translateY(-50%);
     }
 
     a {
-      color: #007acc;
+      color: #3b82f6;
       text-decoration: none;
+      font-weight: 500;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .subheading {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      margin-bottom: 0.3rem;
+      color: #1e293b;
     }
 
     footer {
       text-align: center;
+      color: #64748b;
       font-size: 0.9rem;
-      color: #aaa;
-      margin-top: 2rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid #cbd5e1;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        border-radius: 0;
+      }
+
+      body {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -98,37 +170,112 @@
 <body>
   <header>
     <h1>Kramadhati Naga Praneetha</h1>
-    <p>B.Tech Computer Science Student | Passionate Developer</p>
+    <p>Frontend Developer | Java Programmer | CS Undergraduate</p>
   </header>
 
-  <section class="bio">
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2>About Me</h2>
-    <p>B.Tech Computer Science student with a passion for developing high-performance, scalable applications within a collaborative and forward-thinking team. I'm excited to use what I've learned in real-world situations to grow and help the team. Energetic and compassionate individual with excellent communication and teamwork skills. Demonstrates adaptability and commitment to supporting team objectives. Prepared to leverage these skills to contribute effectively in a new professional setting.</p>
+    <p>
+      I am a B.Tech Computer Science student passionate about developing responsive web interfaces and scalable
+      applications. With experience in Java and HTML/CSS, I enjoy building projects that blend design with
+      functionality. I am energetic, compassionate, and a great communicator, always eager to learn and contribute to
+      team goals in innovative environments.
+    </p>
   </section>
 
-  <section class="skills">
-    <h2>Skills</h2>
+  <section id="education">
+    <h2>Education</h2>
     <ul>
-      <li>Java</li>
-      <li>HTML</li>
-      <li>CSS</li>
+      <li><strong>B.Tech in Computer Science</strong> – Ravindra College of Engineering for Women, Kurnool (2022 - 2026) | 8 CGPA</li>
+      <li><strong>Pre-University (PUC)</strong> – Narayana Group of Institutions, Kurnool (2020 - 2022) | 8 CGPA</li>
+      <li><strong>Secondary School (SSLC)</strong> – Montessori EM High School, Kurnool (2019 - 2020) | 9 CGPA</li>
     </ul>
   </section>
 
-  <section class="project">
-    <h2>Projects</h2>
-    <h3>My Portfolio</h3>
-    <p>This website is my personal portfolio built using HTML, CSS, and JavaScript. It showcases my skills, experience, and projects in a clean and professional manner.</p>
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li><strong>HTML5 & CSS3</strong> – Proficient</li>
+      <li><strong>Java (Core)</strong> – Intermediate</li>
+      <li><strong>Python</strong> – Basic understanding</li>
+      <li><strong>SQL</strong> – Basic understanding</li>
+    </ul>
   </section>
 
-  <section class="contact">
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="subheading">💻 Personal Portfolio Website</div>
+    <p>
+      A live, responsive portfolio website built using HTML and CSS. Designed to showcase skills and provide an
+      impressive user experience for recruiters and collaborators.
+    </p>
+
+    <div class="subheading">🧮 Interest Calculator (IBM - edX)</div>
+    <p>
+      Created a basic interest calculator using HTML, CSS, and JavaScript. Learned to customize layout and logic for
+      interactive forms.
+    </p>
+
+    <div class="subheading">🎯 Object Detection System</div>
+    <p>
+      Worked on object detection using YOLOv3 and OpenCV. The system could identify objects in AI-generated images,
+      enhancing my understanding of AI tools.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Student Mentor, GPCET</strong> – Supported and monitored academic performance of peers; implemented strategies to assist struggling students and connect them with resources.</li>
+      <li><strong>Volunteer Organizer</strong> – Helped plan and execute an Alumni Meet event, coordinating logistics and communication with strong interpersonal skills.</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Math Lab Onramp – MathWorks</li>
+      <li>Getting Started with AI – IBM Skills Build</li>
+      <li>Smart Interviews – Bronze Level Certification</li>
+      <li>Java Programming (2025) – CodeTantra</li>
+      <li>MongoDB Database Admin Path (Self-Managed)</li>
+      <li>Build Your First Chatbot – IBM Skills Cloud</li>
+      <li>Front End Web Developer Certification – Infosys Springboard</li>
+    </ul>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements</h2>
+    <ul>
+      <li>Mentored over 70+ peers during the C-Boot Camp program, fostering a collaborative and supportive learning environment.</li>
+      <li>Led team coordination and communication efforts for successful Alumni Meet event planning and execution.</li>
+      <li>Facilitated group discussions and study sessions to enhance team knowledge sharing and performance.</li>
+      <li>Developed strong interpersonal and communication skills through active participation in workshops and boot camp activities.</li>
+      <li>Built a complete object detection prototype using YOLOv3</li>
+      <li>Consistent academic performer with 8+ CGPA across all years</li>
+    </ul>
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:kpraneetha22@gmail.com">kpraneetha22@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/kramadhati-naga-praneetha-a19368259/" target="_blank">Kramadhati Naga Praneetha</a></p>
+    <p><strong>Email:</strong> <a href="mailto:kpraneetha22@gmail.com">kpraneetha22@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kramadhati-naga-praneetha-a19368259/" target="_blank" rel="noopener noreferrer">Kramadhati Naga Praneetha</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Kramadhati Naga Praneetha</p>
+    <p>&copy; 2025 Kramadhati Naga Praneetha | All rights reserved</p>
   </footer>
 </body>
 
